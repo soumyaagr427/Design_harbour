@@ -1,0 +1,556 @@
+@import url('https://fonts.googleapis.com/css?family=Allura|Josefin+Sans');
+
+*{
+      box-sizing: border-box;
+    }
+body, html{
+  height:100%;
+  margin:0;
+  font-size:16px;
+  font-family:"Lato", sans-serif;
+  font-weight:400;
+  line-height:1.8em;
+  color:#666;
+}
+
+.pimg1, .pimg2, .pimg3{
+  position:relative;
+  /*opacity:0.70;*/
+  background-position:center;
+  background-size:cover;
+  background-repeat:no-repeat;
+
+  /*
+    fixed = parallax
+    scroll = normal
+  */
+  background-attachment:fixed;
+}
+
+.pimg1{
+  background-image:url('images/1.jpg');
+  background-size: cover;
+  min-height:100%;
+}
+
+.pimg2{
+  background-image:url('images/9.jpg');
+  min-height: 600px;
+}
+
+.pimg3{
+  background-image:url('images/18.jpg');
+  min-height:400px;
+}
+
+
+nav.active{
+    background: black;
+  }
+   .custom-toggler.navbar-toggler { 
+            border-color: white; 
+
+        } 
+/************ header carousel starts here *****************/
+     #slider {
+      margin: 0 auto;
+      width: 800px;
+      max-width: 100%;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+    #slider input[type=radio] {
+      display: none;
+    }
+      #slider label {
+        cursor:pointer;
+        text-decoration: none;
+      }
+      #slides {
+        padding: 8px;
+        border: 2px solid #ccc;
+        background: #fff;
+        opacity: 0.5;
+        position: relative;
+        z-index: 1;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+      }
+
+      .slide-content h2{
+        font-family: 'Allura', cursive;
+      color: rgb(180, 124, 102);
+      font-size: 65px;
+      }
+      .slide-content  p{
+        margin: 0;
+      padding: 0;
+      font-size: 22px;
+      font-weight: bold;
+      
+
+
+      }
+
+      #overflow {
+        width: 100%;
+        overflow: hidden;
+      }
+#slide1:checked ~ #slides .inner {
+   margin-left: 0;
+}
+#slide2:checked ~ #slides .inner {
+   margin-left: -100%;
+}
+#slide3:checked ~ #slides .inner {
+   margin-left: -200%;
+}
+#slide4:checked ~ #slides .inner {
+   margin-left: -300%;
+}
+#slides .inner {
+   transition: margin-left 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+   width: 400%;
+   line-height: 2rem;
+   height: 300px;
+}
+#slides .slide {
+   width: 25%;
+   float:left;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100%;
+   color: #000;
+
+}
+/*#slides .slide_1 {
+   background: #00171F;
+}
+#slides .slide_2 {
+   background: #003459;
+}
+#slides .slide_3 {
+   background: #007EA7;
+}
+#slides .slide_4 {
+   background: #00A8E8;
+}*/
+#controls {
+   margin: -180px 0 0 0;
+   width: 100%;
+   height: 50px;
+
+   z-index: 3;
+   position: relative;
+}
+#controls label {
+   transition: opacity 0.2s ease-out;
+   display: none;
+   width: 50px;
+   height: 50px;
+   /*opacity: .4;*/
+}
+#controls label:hover {
+   opacity: 1;
+}
+#slide1:checked ~ #controls label:nth-child(2),
+#slide2:checked ~ #controls label:nth-child(3),
+#slide3:checked ~ #controls label:nth-child(4),
+#slide4:checked ~ #controls label:nth-child(1) {
+   background: url(https://image.flaticon.com/icons/svg/130/130884.svg) no-repeat;
+   float: right;
+   margin: 0 -50px 0 0;
+   display: block;
+}
+#slide1:checked ~ #controls label:nth-last-child(2),
+#slide2:checked ~ #controls label:nth-last-child(3),
+#slide3:checked ~ #controls label:nth-last-child(4),
+#slide4:checked ~ #controls label:nth-last-child(1) {
+   background: url(https://image.flaticon.com/icons/svg/130/130882.svg) no-repeat;
+   
+   float: left;
+   margin: 0 0 0 -50px;
+   display: block;
+}
+#bullets {
+   margin: 150px 0 0;
+   text-align: center;
+}
+#bullets label {
+   display: inline-block;
+   width: 10px;
+   height: 10px;
+   border-radius:100%;
+   background: #ccc;
+   margin: 0 10px;
+}
+#slide1:checked ~ #bullets label:nth-child(1),
+#slide2:checked ~ #bullets label:nth-child(2),
+#slide3:checked ~ #bullets label:nth-child(3),
+#slide4:checked ~ #bullets label:nth-child(4) {
+   background: #444;
+}
+@media screen and (max-width: 900px) {
+   #slide1:checked ~ #controls label:nth-child(2),
+   #slide2:checked ~ #controls label:nth-child(3),
+   #slide3:checked ~ #controls label:nth-child(4),
+   #slide4:checked ~ #controls label:nth-child(1),
+   #slide1:checked ~ #controls label:nth-last-child(2),
+   #slide2:checked ~ #controls label:nth-last-child(3),
+   #slide3:checked ~ #controls label:nth-last-child(4),
+   #slide4:checked ~ #controls label:nth-last-child(1) {
+      margin: 0;
+   }
+   #slides {
+      max-width: calc(100% - 140px);
+      margin: 0 auto;
+   }
+}    
+
+@media only screen and (max-width: 768px){
+  #slider #slides h2{
+    font-size: 35px;
+  }
+    #slider #slides p{
+    font-size: 12px;
+  }
+}
+
+/************ header carousel ends here *****************/
+
+
+/******* quotes section starts here *******/    
+  
+
+.quotes {
+  text-shadow: unset;
+  line-height: 1.4;
+  letter-spacing: 0.5rem;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+   /****** quotes section ends here ******/
+
+
+/*********** card section starts here ***************/
+      .heading{
+      font-family: 'Allura', cursive;
+      color: rgb(180, 124, 102);
+      font-size: 100px;
+      margin-top: 90px;
+      margin-bottom: 5px;
+      text-align: center;
+      }
+      .main{
+         margin-top: 5%;
+      }
+      .hovereffect{
+        position: relative;
+        transition: 3s;
+        box-shadow: 10px 20px 20px rgba(0,0,0,0.8);
+      }
+      .hovereffect .overlay,
+      .hovereffect:after{
+        position: absolute;
+        left: 20px;
+        right: 20px;
+      }
+      .hovereffect:after{
+        content: '';
+        display: block;
+        background: grey;
+        top: 20px;
+        bottom: 20px;
+        opacity: 0;
+        transform: rotate3d(-1,1,0,100deg);
+        transition: 0.4s;
+      }
+      .hovereffect:hover:after{
+        opacity: 0.9;
+        transform: rotate3d(0,0,0,0deg);
+      }
+      .hovereffect img{
+        width: 100%;
+        height: auto;
+
+      }
+      .overlay{
+        top: 45%;
+        opacity: 0;
+        z-index: 1;
+        transform: translate(10%.-30%);
+        transition: 0.3s;
+        text-align: center;
+        color: #fff;
+      }
+      .overlay h3{
+        font-family: big john;
+      }
+      .hovereffect:hover .overlay{
+        opacity: 1;
+        transform: translate(0%,-50%);
+        transition-delay: 0.3s;
+      }
+
+
+/*********** card section ends here ***************/
+
+.section{
+  text-align:center;
+  padding:50px 80px;
+}
+
+.section-light{
+  background-color:#f4f4f4;
+  color:#666;
+}
+
+.section-dark{
+  background-color:#282e34;
+  color:#ddd;
+}
+
+.ptext{
+  position:absolute;
+  top:50%;
+  width:100%;
+  text-align:center;
+  color:#000;
+  font-size:27px;
+  letter-spacing:8px;
+  text-transform:uppercase;
+}
+
+.ptext .border{
+  background-color:#111;
+  color:#fff;
+  padding:20px;
+}
+
+.ptext .border.trans{
+  background-color:transparent;
+}
+
+@media(max-width:568px){
+  .pimg1, .pimg2, .pimg3{
+    background-attachment:scroll;
+  }
+}
+@media(max-width:568px){
+  .pimg1, .pimg2, .pimg3{
+    background-attachment:scroll;
+  }
+}@media(max-width:992px){
+  .pimg1, .pimg2, .pimg3{
+    background-attachment:scroll;
+  }
+}
+@media(max-width:1200px){
+  .pimg1, .pimg2, .pimg3{
+    background-attachment:scroll;
+  }
+}
+
+
+/************ review section starts here *******/
+
+.wrapper{
+  margin-top: 5%;
+}
+
+.wrapper h1{
+  font-family: 'Allura', cursive;
+  color: rgb(180, 124, 102);
+  font-size: 52px;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.team{
+  display: flex;
+  justify-content: center;
+  width: auto;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.team .team_member{
+  background: #fff;
+  margin: 5px;
+  margin-bottom: 50px;
+  width: 300px;
+  padding: 20px;
+  line-height: 20px;
+  color: #8e8b8b;  
+  position: relative;
+}
+
+.team .team_member h3{
+  color: rgb(218, 136, 127);
+  font-size: 26px;
+  margin-top: 50px;
+}
+
+.team .team_member p.role{
+  color: rgb(105, 73, 102)
+  margin: 12px 0;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.team .team_member .team_img{
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.team .team_member .team_img img{
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+}
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  background: #f1f1f1f1;
+}
+
+/* Slides */
+.mySlides {
+  display: none;
+  padding: 80px;
+  text-align: center;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -30px;
+  padding: 16px;
+  color: #888;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  position: absolute;
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+}
+
+/* The dot/bullet/indicator container */
+.dot-container {
+    text-align: center;
+    padding: 20px;
+    background: #ddd;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+/************ review section ends here *******/
+
+/**************third image section starts here **************/
+@media only screen and (max-width: 768px){
+       .pimg3{
+  background-image:url('images/12.jpg');
+}
+  }
+
+/********** footer section starts ****************/
+#footer-area{
+      padding: 90px 0 60px 0;
+      background: #262626;
+      color: #fff;
+     }
+     .footer-social{
+      margin-top: 20px;
+     }
+     .single-footer h3{
+      font-weight: 500;
+      margin-bottom: 25px;
+      color: #fafafa;
+      font-family: 'Allura', cursive;
+     }
+     .link-area li{
+      padding: 5px 5px 5px 0;
+      list-style: none;
+
+     }
+     .link-area li a{
+      text-transform: capitalize;
+      color: #ddd;
+      font-family: merienda;
+     }
+     .link-area li a i{
+      margin-right: 10px;
+      color: #ddd;
+     }
+     .link-area{
+      padding: 0;
+     }
+     .single-footer p{
+      font-family: merienda;
+     }
+     .footer-social li a{
+      width: 30px;
+      height: 30px;
+      display: inline-block;
+      background: #000;
+     }
+     .footer-social li a i{
+      color: #fff;
+      padding: 8px;
+     }
+     .widget li{
+      float: left;
+      width: 50%;
+     }
+     .widget li a img{
+      margin-bottom: -10px;
+      width: 100%;
+      height: 70px;
+
+     }
+     .copyright-area{
+      background: #000;
+      padding: 30px 0;
+      margin-top: 30px;
+      border-radius: 5px;
+     }
+     .copyright-area p{
+      font-weight: 600;
+      color: #fafafa;
+     }
+  
+  /****************** footer section ends here ********************/

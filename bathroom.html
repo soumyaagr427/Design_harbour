@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>BathRoom</title>
+  <link rel="stylesheet" href="Services/css/bathroom.css">
+ <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+
+
+ 
+
+</head>
+<body>
+  
+      <nav class="navbar nav navbar-expand-lg navbar-light fixed-top">
+      <div class="container">
+        <a href="index.html" style="color: #F1948A ;" class="navbar-brand font-weight-bold animate__animated animate__heartBeat animate__repeat-3">Design Harvest</a>
+        <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#collapsenavbar" >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse text-center" id="collapsenavbar">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a href="home.html" class="nav-link text-white font-weight-bold">HOME</a>
+              </li>
+              <li class="nav-item">
+                <a href="services.html" class="nav-link text-white font-weight-bold">SERVICES</a>
+            </li> 
+            <li class="nav-item">   
+                <a href="gallery.html" class="nav-link text-white font-weight-bold">GALLERY</a>
+            </li>
+            <li class="nav-item">    
+                <a href="aboutus.html" class="nav-link text-white font-weight-bold">ABOUT US</a>
+            </li>
+            <li class="nav-item">    
+                <a href="contact.html" class="nav-link text-white font-weight-bold">CONTACT US</a>
+            </li>    
+          </ul>
+        </div>
+      </div>
+</nav>
+  <div class="hero-image">
+    <div class="hero-text">
+        <h><b>BathRoom</b></h>
+    </div>
+  </div>
+    <div class="container">
+      <h><b>How to Design a bathroom ?</b></h><br>
+      <p>Creating the perfect bathroom is tricky business, especially considering the integral and necessary practicality of it all. However, there are a few actions you can take to ensure that your bathroom meets all your needs as a place to relax, unwind and indulge.</p><br>
+      <div class="steps"><b>
+        Step 1: Take the measurements of your room<br>
+        Step 2: Identify the best natural lighting<br>
+        Step 3: Choose what to plan your design around<br>
+        Step 4: Decide on colours<br>
+        Step 5: Gather a colour patchwork<br>
+        Step 6: Start with the walls<br>
+        Step 7: Consider the floor<br>
+        Step 8: Position your furniture <br>
+        Step 9: Prioritise your artificial lighting<br>
+        Step 10: Own your style<br>
+      </b></div>
+    
+    </div> 
+    <div class="quote">
+      <h><b>"You Gotta Fight For Your Right To Potty....."</b></h>
+    </div>  
+    <div class="slideshow-container">
+
+      <div class="mySlides">
+        <div class="numbertext">1 / 5</div>
+        <img src="Services/images/bath1.jpg" width="1000x" height="500px" >
+        
+      </div>
+    
+      <div class="mySlides">
+        <div class="numbertext">2 / 5</div>
+        <img src="Services/images/bath2.jpg"  width="100%" height="500px" >
+        
+      </div>
+    
+      <div class="mySlides">
+        <div class="numbertext">3 / 5</div>
+        <img src="Services/images/bath3.jpg"  width="100%" height="500px" >
+       
+      </div>
+    
+      <div class="mySlides">
+          <div class="numbertext">4 / 5</div>
+          <img src="Services/images/bath4.jpg"  width="100%" height="500px" >
+          
+      </div>
+      
+      <div class="mySlides">
+          <div class="numbertext">5 / 5</div>
+          <img src="Services/images/bath5.jpg"  width="100%" height="500px" >
+          
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  <br>
+    
+  <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+      <span class="dot" onclick="currentSlide(4)"></span>
+      <span class="dot" onclick="currentSlide(5)"></span>
+  </div>
+  <script>
+      var slideIndex = 1;
+      showSlides(slideIndex);
+      
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+      
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+      
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+      }
+  </script>
+  </body>
+</html>    
