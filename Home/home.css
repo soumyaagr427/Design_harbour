@@ -28,18 +28,18 @@ body, html{
 }
 
 .pimg1{
-  background-image:url('images/1.jpg');
+  background-image:url('https://unsplash.com/photos/rOk4VSMS3Ck');
   background-size: cover;
   min-height:100%;
 }
 
 .pimg2{
-  background-image:url('images/9.jpg');
+  background-image:url('https://unsplash.com/photos/PJNO2sLlbB8');
   min-height: 600px;
 }
 
 .pimg3{
-  background-image:url('images/18.jpg');
+  background-image:url('https://unsplash.com/photos/tHkJAMcO3QE');
   min-height:400px;
 }
 
